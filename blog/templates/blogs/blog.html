@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% for i in B %}
+<a href="{% url 'blog:details' i.id %}"><h1>{{i.title}}</h1></a>
+
+<p>{{i.description|safe|truncatechars:50}}</p>
+<h2>{{i.date}}</h2>
+{%endfor%}
+{%endblock%}
